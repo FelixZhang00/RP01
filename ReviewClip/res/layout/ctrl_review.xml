@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_crtlreview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg"
+        android:gravity="center_horizontal"
+        android:text="摘录本"
+        android:textColor="#666666"
+        android:textSize="28sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_crtlreview_title"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/devide_line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:background="@color/backgroundcolor" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/backgroundcolor" >
+
+            <LinearLayout
+                android:id="@+id/ll_ctrlreview_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backgroundcolor"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+         
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还没有摘录?"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="去复制喜欢的文字吧!"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+           <ListView
+                android:id="@+id/lv_crtlreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bt_ctrl_sg_add"
+                android:layout_alignParentTop="true"
+                android:cacheColorHint="@android:color/transparent" 
+                >
+            </ListView>
+
+            <Button
+                android:id="@+id/bt_ctrl_sg_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="添加摘录"
+                android:textColor="#ff000000"
+                android:textSize="18sp" /> 
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>
