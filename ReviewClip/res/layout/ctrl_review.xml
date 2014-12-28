@@ -5,24 +5,7 @@
     android:background="@color/backgroundcolor"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/tv_crtlreview_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/title_bg"
-        android:gravity="center_horizontal"
-        android:text="摘录本"
-        android:textColor="#666666"
-        android:textSize="28sp" />
-
-    <View
-        android:id="@+id/view1"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tv_crtlreview_title"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/devide_line" />
+    <include layout="@layout/titlebar" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -44,31 +27,29 @@
                 android:orientation="vertical"
                 android:visibility="invisible" >
 
-         
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="还没有摘录?"
                     android:textColor="@color/grey"
                     android:textSize="16sp" />
+
                 <TextView
-                    android:layout_marginTop="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:text="去复制喜欢的文字吧!"
                     android:textColor="@color/grey"
                     android:textSize="16sp" />
             </LinearLayout>
 
-           <ListView
+            <ListView
                 android:id="@+id/lv_crtlreview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/bt_ctrl_sg_add"
                 android:layout_alignParentTop="true"
-                android:cacheColorHint="@android:color/transparent" 
-                >
+                android:cacheColorHint="@android:color/transparent" >
             </ListView>
 
             <Button
@@ -80,7 +61,7 @@
                 android:gravity="center"
                 android:text="添加摘录"
                 android:textColor="#ff000000"
-                android:textSize="18sp" /> 
+                android:textSize="18sp" />
         </RelativeLayout>
     </FrameLayout>
 

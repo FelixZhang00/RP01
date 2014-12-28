@@ -27,6 +27,8 @@ import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -83,6 +85,23 @@ public class MainActivity extends Activity {
 			}
 
 		});
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Logger.i(TAG, "id:" + id + " position:" + position);
+				// 切换到新的activity
+				Intent intent = new Intent(MainActivity.this,
+						DetailActivity.class);
+
+				intent.putExtra("ID", MyAdapter.getClipBeans().get((int) id)
+						.get_id());
+				startActivity(intent);
+
+			}
+		});
 	}
 
 	/**
@@ -116,6 +135,7 @@ public class MainActivity extends Activity {
 			Logger.i(TAG, "alter");
 			// 切换到新的activity
 			Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+			intent.putExtra("ID", clipBean.get_id());
 			startActivity(intent);
 			return true;
 		case R.id.item_copy:
